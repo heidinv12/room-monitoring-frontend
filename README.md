@@ -1,6 +1,6 @@
 # room-monitoring-frontend
 
+This project was created to use alongside [room-monitoring-backend](https://github.com/heidinv12/room-monitoring-backend). The images below show what the frontend looks like:
 
-# Skeleton from: 
-
-https://github.com/MattBroach/es6-starter
+![](/media/frontend_forms.PNG)
+![](/media/frontend_tables.PNG)
