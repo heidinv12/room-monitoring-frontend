@@ -14,5 +14,6 @@ The data in the tables are obtained by doing a GET request on ```getData``` also
 **To run the frontend:**
 - Download or copy repo
 - In the root folder, run ```yarn install```
-- Once al dpeendencies have been isntalled, run ```npm install```
+- Once all dependencies have been isntalled, run ```npm install```
+- run ```npm start```
 - Open a browser and go to ```http://localhost:9000/``` or ```http://127.0.0.1:9000/```
