@@ -129,5 +129,7 @@ getJSON(GET_DATA_ENDPOINT_URL).then(
       error => console.log(error)
     )
 
-document.getElementById('button').onclick = submitContent
-document.getElementById('phonebutton').onclick = submitPhoneContent
+window.addEventListener('load', function() {
+	document.getElementById('button').onclick = submitContent
+	document.getElementById('phonebutton').onclick = submitPhoneContent
+})
