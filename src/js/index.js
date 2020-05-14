@@ -2,11 +2,11 @@ import '../sass/styles.sass'
 
 import { getJSON, postJSON } from './home'
 
-const DOMAIN = 'https://8ntyvo5f3a.execute-api.us-east-1.amazonaws.com/'
-const CREATE_CONFIG_DATA_ENDPOINT_URL = `${DOMAIN}dev/createconfigdata`
-const CREATE_PHONE_DATA_ENDPOINT_URL = `${DOMAIN}dev/createphonedata`
-const DELETE_PHONE_ENDPOINT_URL = `${DOMAIN}dev/deletephone`
-const GET_DATA_ENDPOINT_URL = `${DOMAIN}dev/getdata`
+const DOMAIN = 'https://8ntyvo5f3a.execute-api.us-east-1.amazonaws.com/dev/'
+const CREATE_CONFIG_DATA_ENDPOINT_URL = `${DOMAIN}createconfigdata`
+const CREATE_PHONE_DATA_ENDPOINT_URL = `${DOMAIN}createphonedata`
+const DELETE_PHONE_ENDPOINT_URL = `${DOMAIN}deletephone`
+const GET_DATA_ENDPOINT_URL = `${DOMAIN}getdata`
 
 const setContent = (id, content) => {
   const contentWrapper = document.getElementById(id)
