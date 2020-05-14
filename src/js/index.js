@@ -16,7 +16,7 @@ const deletePhone = (value) => {
 	const body = {
 		phone: value,
 	}
-	postJSON('DELETE_PHONE_ENDPOINT_URL', body)
+	postJSON(process.env.DELETE_PHONE_ENDPOINT_URL, body)
 }
 
 const generateObjectList = (list, title) => {
@@ -97,7 +97,7 @@ const submitContent = () => {
 		minTemperature: getContent('mintemp'),
 		maxTemperature: getContent('maxtemp'),
 	}
-	postJSON('CREATE_CONFIG_DATA_ENDPOINT_URL', body)
+	postJSON(process.env.CREATE_CONFIG_DATA_ENDPOINT_URL, body)
 }
 
 const submitPhoneContent = () => {
@@ -105,10 +105,10 @@ const submitPhoneContent = () => {
 		user: getContent('user'),
 		phone: getContent('phone'),
 	}
-	postJSON('CREATE_PHONE_DATA_ENDPOINT_URL', body)
+	postJSON(process.env.CREATE_PHONE_DATA_ENDPOINT_URL, body)
 }
 
-getJSON('GET_DATA_ENDPOINT_URL').then(
+getJSON(process.env.GET_DATA_ENDPOINT_URL).then(
       response => response.json().then(function(data) {
       	generateObjectList(data.Phones, 'Registered Phones');
       	generateRoomTempAndHum(data.Configurations.MinTemperature,
