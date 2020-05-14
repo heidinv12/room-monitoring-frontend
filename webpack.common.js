@@ -16,7 +16,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'ES6 Starter',
+      title: 'Room Monitoring Sys',
       template: 'src/html/index.html',
       favicon: './src/img/favicon.png',
     })
