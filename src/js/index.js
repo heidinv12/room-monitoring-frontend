@@ -124,12 +124,9 @@ getJSON(GET_DATA_ENDPOINT_URL).then(
         generateTableFromList(data.SmokeAlert, 'Smoke Sensor Triggered');
         generateTableFromList(data.MotionSensor, 'Motion Sensor Triggered');
         generateTableFromList(data.DoorSensor, 'Door Sensor Triggered');
+	document.getElementById('button').onclick = submitContent
+	document.getElementById('phonebutton').onclick = submitPhoneContent
       })
     ).catch(
       error => console.log(error)
     )
-
-window.addEventListener('load', function() {
-	document.getElementById('button').onclick = submitContent
-	document.getElementById('phonebutton').onclick = submitPhoneContent
-})
