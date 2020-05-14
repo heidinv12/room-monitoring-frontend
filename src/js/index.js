@@ -2,6 +2,12 @@ import '../sass/styles.sass'
 
 import { getJSON, postJSON } from './home'
 
+const DOMAIN = 'https://8ntyvo5f3a.execute-api.us-east-1.amazonaws.com/'
+const CREATE_CONFIG_DATA_ENDPOINT_URL = `${DOMAIN}dev/createconfigdata`
+const CREATE_PHONE_DATA_ENDPOINT_URL = `${DOMAIN}dev/createphonedata`
+const DELETE_PHONE_ENDPOINT_URL = `${DOMAIN}dev/deletephone`
+const GET_DATA_ENDPOINT_URL = `${DOMAIN}dev/getdata`
+
 const setContent = (id, content) => {
   const contentWrapper = document.getElementById(id)
   contentWrapper.defaultValue = content
@@ -16,7 +22,7 @@ const deletePhone = (value) => {
 	const body = {
 		phone: value,
 	}
-	postJSON(process.env.DELETE_PHONE_ENDPOINT_URL, body)
+	postJSON(DELETE_PHONE_ENDPOINT_URL, body)
 }
 
 const generateObjectList = (list, title) => {
@@ -97,7 +103,7 @@ const submitContent = () => {
 		minTemperature: getContent('mintemp'),
 		maxTemperature: getContent('maxtemp'),
 	}
-	postJSON(process.env.CREATE_CONFIG_DATA_ENDPOINT_URL, body)
+	postJSON(CREATE_CONFIG_DATA_ENDPOINT_URL, body)
 }
 
 const submitPhoneContent = () => {
@@ -105,10 +111,10 @@ const submitPhoneContent = () => {
 		user: getContent('user'),
 		phone: getContent('phone'),
 	}
-	postJSON(process.env.CREATE_PHONE_DATA_ENDPOINT_URL, body)
+	postJSON(CREATE_PHONE_DATA_ENDPOINT_URL, body)
 }
 
-getJSON(process.env.GET_DATA_ENDPOINT_URL).then(
+getJSON(GET_DATA_ENDPOINT_URL).then(
       response => response.json().then(function(data) {
       	generateObjectList(data.Phones, 'Registered Phones');
       	generateRoomTempAndHum(data.Configurations.MinTemperature,
